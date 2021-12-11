@@ -14,7 +14,7 @@ const ResultItem = ({
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const imageSource = backdrop_path ?? poster_path;
 
-  const dateSplitbyBullet = release_date?.replaceAll("-", "\u2022") ?? "";
+  // const dateSplitbyBullet = release_date?.replaceAll("-", "\u2022") ?? "";
   return (
     <VStack
       as="li"
@@ -50,7 +50,7 @@ const ResultItem = ({
           _groupHover={{ opacity: "1" }}
           transition=".2s ease-in-out"
         >
-          <Text>{dateSplitbyBullet}</Text>
+          <Text>{release_date ?? ""}</Text>
           <HStack>
             <Icon as={AiOutlineLike} />
             <Text>{vote_count ?? 0}</Text>
