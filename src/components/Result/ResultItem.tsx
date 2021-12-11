@@ -7,14 +7,14 @@ const ResultItem = ({
   title,
   original_title,
   vote_count,
-  release_date = "",
+  release_date,
   backdrop_path,
   poster_path,
 }: MovieResult) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const imageSource = backdrop_path ?? poster_path;
 
-  const dateSplitbyBullet = release_date.replaceAll("-", "\u2022");
+  const dateSplitbyBullet = release_date?.replaceAll("-", "\u2022") ?? "";
   return (
     <VStack
       as="li"
